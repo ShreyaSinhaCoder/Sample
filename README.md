@@ -16,4 +16,11 @@ This one
 This one
 
 No, this one!!
+<<<<<<< Updated upstream
 >>>>>>> 1f12d52 (No, this one.)
+=======
+
+But not this one!
+
+This s for stash
+>>>>>>> Stashed changes
