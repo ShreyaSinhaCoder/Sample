@@ -10,4 +10,10 @@ This is for feature branch 1 !
 Feature 2 aha
 >>>>>>> feature2
 
+<<<<<<< HEAD
 This one
+=======
+This one
+
+No, this one!!
+>>>>>>> 1f12d52 (No, this one.)
