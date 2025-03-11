@@ -31,4 +31,9 @@ This one
 No, this one!!
 
 But not this one!
+<<<<<<< HEAD
+>>>>>>> feature1
+=======
+
+This s for stash
 >>>>>>> feature1
