@@ -11,6 +11,7 @@ Feature 2 aha
 >>>>>>> feature2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 This one
 =======
 This one
@@ -24,3 +25,10 @@ But not this one!
 
 This s for stash
 >>>>>>> Stashed changes
+=======
+This one
+
+No, this one!!
+
+But not this one!
+>>>>>>> feature1
