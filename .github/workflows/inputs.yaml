@@ -1,0 +1,34 @@
+name: Number Input Validation
+
+on: 
+  workflow_dispatch: 
+    inputs: 
+      numberInput: 
+        description: 'Enter a number'
+        required: true
+        default: 0 
+
+jobs:
+  number-validation-job: 
+    runs-on: ubuntu-latest 
+
+    steps: 
+      - name: 'Checkout the repo'
+        uses: actions/checkout@v3
+
+      - name: Validate Input
+        id: Validate
+        run: |
+          number_regex='^[0-9]+$'
+          if [[ ! "${{ github.event.inputs.numberInput }}" =~ $number_regex ]]; then
+            echo "Input is not a valid number: ${{ github.event.inputs.numberInput }}"
+            exit 1  # Exit with a non-zero code to fail the job
+          fi
+
+      - name: Use the Validated Input
+        run: echo "The input was a valid number: ${{ github.event.inputs.numberInput }}"
+        
+      
+
+    
+        
