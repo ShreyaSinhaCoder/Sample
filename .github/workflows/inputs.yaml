@@ -25,6 +25,8 @@ jobs:
             exit 1  # Exit with a non-zero code to fail the job
           fi
 
+      - name: Use the Validated Input
+        run: echo "The input was a valid number:${{ github.event.inputs.numberInput }}"
 
         
       
