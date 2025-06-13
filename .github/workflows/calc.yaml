@@ -1,4 +1,4 @@
-name: Calculator App
+name: Calcium
 
 on:
   workflow_dispatch:
