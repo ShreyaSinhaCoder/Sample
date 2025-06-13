@@ -1,0 +1,46 @@
+name: Calculator App
+
+on:
+  workflow_dispatch:
+    inputs:
+      num1:
+        description: 'Enter the first number'
+        required: true
+        default: '0'
+      num2:
+        description: 'Enter the second number'
+        required: true
+        default: '0'
+      operation:
+        description: 'Enter operation (add, subtract, multiply, divide)'
+        required: true
+        default: 'add'
+
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Perform Calculation
+      run: |
+        num1=${{ github.event.inputs.num1 }}
+        num2=${{ github.event.inputs.num2 }}
+        operation=${{ github.event.inputs.operation }}
+
+        if [ "$operation" == "add" ]; then
+          result=$(echo "$num1 + $num2" | bc)
+        elif [ "$operation" == "subtract" ]; then
+          result=$(echo "$num1 - $num2" | bc)
+        elif [ "$operation" == "multiply" ]; then
+          result=$(echo "$num1 * $num2" | bc)
+        elif [ "$operation" == "divide" ]; then
+          if [ "$num2" == "0" ]; then
+            echo "Error: Division by zero"
+            exit 1
+          fi
+          result=$(echo "scale=2; $num1 / $num2" | bc)
+        else
+          echo "Invalid operation"
+          exit 1
+        fi
+
+        echo "Result: $result"
