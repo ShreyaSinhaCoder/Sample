@@ -17,37 +17,37 @@ on:
     	  required: True
 
   Build-and-release:
-		Runs-on: ubuntu-latest
+	Runs-on: ubuntu-latest
 
   Validate-input:
-	  Runs-on: ubuntu-latest 
+        Runs-on: ubuntu-latest 
  	
   	- name: 'Checkout the repo'
-      uses: actions/checkout@v3
+          uses: actions/checkout@v3
 
-     - name: Validate Input num1
-       id: Validate
-       run: |
+        - name: Validate Input num1
+          id: Validate
+          run: |
           number_regex='^[0-9]+$'
           if [[ ! "${{ github.event.inputs.num1 }}" =~ $number_regex ]]; then
             echo "Input is not a valid number: ${{ github.event.inputs.num1 }}"
             exit 1  # Exit with a non-zero code to fail the job
           fi
 
-      - name: Use the Validated Input
-        run: echo "The input num1 was a valid number:${{ github.event.inputs.num1 }}"
+       - name: Use the Validated Input
+         run: echo "The input num1 was a valid number:${{ github.event.inputs.num1 }}"
 
-- name: Validate Input num2
-        	   id: Validate
-                 run: |
+       - name: Validate Input num2
+         id: Validate
+	 run: |
           number_regex='^[0-9]+$'
           if [[ ! "${{ github.event.inputs.num2 }}" =~ $number_regex ]]; then
             echo "Input is not a valid number: ${{ github.event.inputs.num2 }}"
             exit 1  # Exit with a non-zero code to fail the job
           fi
 
-      - name: Use the Validated Input
-        run: echo "The input num2 was a valid number:${{ github.event.inputs.num2 }}"
+       - name: Use the Validated Input
+         run: echo "The input num2 was a valid number:${{ github.event.inputs.num2 }}"
 
 
     
