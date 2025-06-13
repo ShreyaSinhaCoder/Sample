@@ -4,16 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       Num1: 
-			  description: 'Enter num1'
-			  default: 0 
-			  required: True 
-		  Num2:
-			  description: 'Enter num2'
-			  default: 0 
-			  required: True 
-		  Sign: 
-			  description: 'Enter one of the four signs'
-			  default: '+' 
+	  description: 'Enter num1'
+	  default: 0 
+	  required: True 
+      Num2:
+	  description: 'Enter num2'
+	  default: 0 
+	  required: True 
+     Sign: 
+	  description: 'Enter one of the four signs'
+	  default: '+' 
     	  required: True
 
   Build-and-release:
