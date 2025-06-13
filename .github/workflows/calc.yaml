@@ -37,7 +37,7 @@ jobs:
             echo "Error: Division by zero"
             exit 1
           fi
-          result=$(echo "scale=2; $num1 / $num2" | bc)
+          result=$(echo "scale=2; $num1 / $num2" )
         else
           echo "Invalid operation"
           exit 1
