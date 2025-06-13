@@ -20,6 +20,26 @@ jobs:
   calculate:
     runs-on: ubuntu-latest
     steps:
+    - name: Validate inputs num1
+      run: |
+          number_regex='^[0-9]+$'
+          if [[ ! "${{ github.event.inputs.num1 }}" =~ $number_regex ]]; then
+            echo "Input is not a valid number: ${{ github.event.inputs.num1 }}"
+            exit 1  # Exit with a non-zero code to fail the job
+          fi
+    - name: Use the Validated Input
+      run: echo "The input num1 was a valid number:${{ github.event.inputs.num1 }}"
+      
+    - name: Validate inputs num2
+      run: |
+          number_regex='^[0-9]+$'
+          if [[ ! "${{ github.event.inputs.num2 }}" =~ $number_regex ]]; then
+            echo "Input is not a valid number: ${{ github.event.inputs.num2 }}"
+            exit 1  # Exit with a non-zero code to fail the job
+          fi
+    - name: Use the Validated Input
+      run: echo "The input num2 was a valid number:${{ github.event.inputs.num2 }}"
+
     - name: Perform Calculation
       run: |
         num1=${{ github.event.inputs.num1 }}
