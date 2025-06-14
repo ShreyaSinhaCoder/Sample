@@ -21,6 +21,6 @@ jobs:
         run: |
           num1=${{github.event.inputs.num1}}
           num2=${{github.event.inputs.num2}}
-          python .github/workflows/calculator.py $num1, $num2, ${{github.event.inputs.operation}}
+          python calculator.py $num1, $num2, ${{github.event.inputs.operation}}
     
 
