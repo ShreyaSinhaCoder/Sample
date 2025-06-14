@@ -16,11 +16,11 @@ on:
 jobs:
   run-python-script:
     runs-on: ubuntu-latest 
-
-    - name: 'Send input to python script and print output'
-      runs: |
-        num1="${{github.event.inputs.num1}}"
-        num2="${{github.event.inputs.num2}}"
-        python calculator.py $num1, $num2, ${{github.event.inputs.operation}}
+    steps:
+      - name: 'Send input to python script and print output'
+        run: |
+          num1=${{github.event.inputs.num1}}
+          num2=${{github.event.inputs.num2}}
+          python calculator.py $num1, $num2, ${{github.event.inputs.operation}}
     
 
