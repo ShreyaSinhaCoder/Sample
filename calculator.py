@@ -23,5 +23,5 @@ if __name__ == "__main__":
     a = sys.argv[1]
     b = sys.argv[2]
     diction = { "add" : "A", "subtract" : "B", "mulitply" : "C", "divide" :"D" } 
-    method_run = diction.get(value)()
+    diction.get(value)()
     #print(method_run(a, b))
