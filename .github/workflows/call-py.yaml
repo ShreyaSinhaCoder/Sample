@@ -17,10 +17,16 @@ jobs:
   run-python-script:
     runs-on: ubuntu-latest 
     steps:
+      - name: 'CheckOut files'
+        run: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+            python-version: '3.x'
       - name: 'Send input to python script and print output'
         run: |
           num1=${{github.event.inputs.num1}}
           num2=${{github.event.inputs.num2}}
-          python ../calculator.py $num1, $num2, ${{github.event.inputs.operation}}
+          python calculator.py $num1, $num2, ${{github.event.inputs.operation}}
     
 
