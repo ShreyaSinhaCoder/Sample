@@ -17,8 +17,8 @@ jobs:
   run-python-script:
     runs-on: ubuntu-latest 
     steps:
-      - name: 'CheckOut files'
-        run: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
