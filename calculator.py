@@ -19,8 +19,15 @@ def D(a,b):
 
 if __name__ == "__main__":
     value = sys.argv[3]
-    a = sys.argv[1]
-    b = sys.argv[2]
-    diction = { "add" : "A", "subtract" : "B", "mulitply" : "C", "divide" :"D" } 
-    print(diction.get(value)(int(a),int(b)))
+    a = int(sys.argv[1])
+    b = int(sys.argv[2])
+    if value == "add":
+      print(A(a,b))
+    elif value == "subtract":
+      print(B(a,b))
+    elif value == "multiply":
+      print(C(a,b))
+    else:
+      print(D(a,b))
+    
     #print(method_run(a, b))
