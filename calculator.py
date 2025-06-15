@@ -2,7 +2,6 @@ import sys
 
 #Calculator app
 def A(a, b):
-  print(int(a)+int(b))
   return a+b 
 
 def B(a,b):
@@ -23,5 +22,5 @@ if __name__ == "__main__":
     a = sys.argv[1]
     b = sys.argv[2]
     diction = { "add" : "A", "subtract" : "B", "mulitply" : "C", "divide" :"D" } 
-    print(A(a,b))
+    print(A(int(a),int(b)))
     #print(method_run(a, b))
