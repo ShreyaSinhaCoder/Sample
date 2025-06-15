@@ -2,7 +2,7 @@ import sys
 
 #Calculator app
 def A(a, b):
-  print(a+b)
+  print(int(a)+int(b))
   return a+b 
 
 def B(a,b):
